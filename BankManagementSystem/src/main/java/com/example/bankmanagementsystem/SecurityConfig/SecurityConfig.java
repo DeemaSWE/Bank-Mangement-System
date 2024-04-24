@@ -41,7 +41,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/v1/employee/update").hasAuthority("EMPLOYEE")
                 .requestMatchers( "/api/v1/employee/delete/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
                 .requestMatchers("/api/v1/customer/update", "/api/v1/account/create", "/api/v1/account/update/**",
-                        "/api/v1/account/view/**", "/api/v1/account/deposit/**", "/api/v1/account/withdraw/**", "/api/v1/account/transfer/**").hasAuthority("CUSTOMER")
+                        "/api/v1/account/view/**","/api/v1/account/get-my-accounts", "/api/v1/account/deposit/**", "/api/v1/account/withdraw/**", "/api/v1/account/transfer/**").hasAuthority("CUSTOMER")
                 .requestMatchers( "/api/v1/customer/delete/**", "/api/v1/account/delete/**").hasAnyAuthority("CUSTOMER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()

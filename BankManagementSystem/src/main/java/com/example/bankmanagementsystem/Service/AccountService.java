@@ -84,6 +84,12 @@ public class AccountService {
         return account;
     }
 
+    public Set<Account> getMyAccounts(Integer userId) {
+        Customer customer = customerRepository.findCustomerById(userId);
+
+        return customer.getAccounts();
+    }
+
     public void depositMoney(Integer userId, Integer accountId, Double amount) {
         Account account = accountRepository.findAccountById(accountId);
 

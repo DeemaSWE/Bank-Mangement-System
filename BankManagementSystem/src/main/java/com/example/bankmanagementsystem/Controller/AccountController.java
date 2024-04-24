@@ -57,6 +57,12 @@ public class AccountController {
         return ResponseEntity.status(200).body(accountService.getAccount(user.getId(), accountId));
     }
 
+    // Customer
+    @GetMapping("/get-my-accounts")
+    public ResponseEntity getMyAccounts(@AuthenticationPrincipal User user){
+        return ResponseEntity.status(200).body(accountService.getMyAccounts(user.getId()));
+    }
+
 
     // Customer
     @PutMapping("/deposit/{accountId}/{amount}")
