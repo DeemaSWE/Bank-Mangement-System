@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/employee/register", "/api/v1/customer/register").permitAll()
                 .requestMatchers("/api/v1/auth/get-all", "/api/v1/employee/get-all",
-                        "/api/v1/customer/get-all", "/api/v1/account/get-all", "/api/v1/account/block", "/api/v1/account/activate").hasAuthority("ADMIN")
+                        "/api/v1/customer/get-all", "/api/v1/account/get-all", "/api/v1/account/block/**", "/api/v1/account/activate/**").hasAuthority("ADMIN")
                 .requestMatchers("/api/v1/employee/update").hasAuthority("EMPLOYEE")
                 .requestMatchers( "/api/v1/employee/delete/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
                 .requestMatchers("/api/v1/customer/update", "/api/v1/account/create", "/api/v1/account/update/**",
